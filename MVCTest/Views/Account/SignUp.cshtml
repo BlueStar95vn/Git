@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewData["Title"] = "SignUp";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section scripts{
+
+    @*@{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }*@
+    <script src="~/js/Signup.js"></script>
+}
+@*@using (Html.BeginForm("SubmitSignUp", "Account", FormMethod.Post))
+{*@
+@model MVCTest.Models.AccountModel
+<form action ="SubmitSignUp"  id="signupform" onsubmit="return validateform(this)" name="signupform" method="post" class="form-horizontal">
+    <div class="form-group">
+        <center><h2>Register</h2></center>
+    </div>
+    <div class="form-group ">
+        <label class="control-label col-sm-4">First Name: </label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" id="firstname" name="firstname"  />
+            <span class="text-danger" id="firstmess"> </span>
+            @*<input asp-for="FirstName" class="form-control" />
+            <span asp-validation-for="FirstName" class="text-danger"></span>*@
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-4">Last Name: </label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" id="lastname"  name="lastname" />
+            <span class="text-danger" id="lastmess"> </span>
+            @*<input asp-for="LastName" class="form-control" />
+            <span asp-validation-for="LastName" class="text-danger"></span>*@
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-4">Position: </label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" id="position"  />
+            <span class="text-danger" id="positionmess"> </span>
+            @*<input asp-for="Position" class="form-control" />
+            <span asp-validation-for="Position" class="text-danger"></span>*@
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-4">Gender: </label>
+        <div class="col-sm-6">
+            <label><input type="radio" name="gender" id="male" value="Male" checked="checked" />Male  </label>
+            <label><input type="radio" name="gender" id="female" value="Female" />Female</label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-4">Phone Number: </label>
+        <div class="col-sm-6">
+            <input type="tel" class="form-control" name ="phoneNumber "id="phoneNumber" />
+            <span class="text-danger" id="phonemess"> </span>
+            @*<input asp-for="PhoneNumber" type="tel" class="form-control" />
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span>*@
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-4">Email: </label>
+        <div class="col-sm-6">
+            <input type="email" class="form-control" name="email" id="email" />
+            <span class="text-danger" id="emailmess"> </span>
+            @*<input asp-for="Email" id="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>*@
+        </div>
+    </div>
+    <div class="form-group" id="register">
+        <div class="col-sm-offset-4 col-sm-8">
+            <button type="submit" id="submit" onclick="return validateform()" name="submit" class="btn btn-success">Register</button>
+            <button type="reset" class="btn btn-danger">Reset</button>
+        </div>
+    </div>
+</form>    
+
